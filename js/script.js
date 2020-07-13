@@ -37,29 +37,24 @@
 
     }
 
-    const links = document.querySelectorAll('.titles a');
-    console.log(links);
-    for (let link of links) {
-        link.addEventListener('click', titleClickHandler);
-    }
+    // funkcja razem ze stala i petla przeniesiona do linii od 75 do 79
 
 
     const optArticleSelector = '.post',
         optTitleSelector = '.post-title',
         optTitleListSelector = '.titles',
-        titleList = document.querySelector(optTitleListSelector),
-        articles = document.querySelectorAll(optArticleSelector);
+        titleList = document.querySelector('.titles'), // Poprawione, ale nie wiem, czy dokladnie o to chodzilo
+        articles = document.querySelectorAll('.post'); // Poprawione, ale nie wiem, czy dokladnie o to chodzilo
 
     function generateTitleLinks() {
 
         /* remove contents of titleList */
-        function clearMessages() {
-            titleList.innerHTML = '';
-        }
-        clearMessages();
+
+        titleList.innerHTML = ''; //Poprawione
+
         /* for each article */
         let html = '';
-        for (article of articles) {
+        for (const article of articles) {
             /* get the article id */
             const articleID = article.getAttribute('id');
             console.log('ID arykulu: ' + articleID);
@@ -76,6 +71,12 @@
         }
         titleList.innerHTML = html;
         console.log(html);
+
+        const links = document.querySelectorAll('.titles a');
+        console.log(links);
+        for (let link of links) {
+            link.addEventListener('click', titleClickHandler); // tutaj przeniesiony addEventListener
+        }
     }
 
     generateTitleLinks();
