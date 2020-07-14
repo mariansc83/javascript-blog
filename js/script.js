@@ -63,7 +63,7 @@
             const linkHTML = '<li><a href="#' + articleID + '"><span>' + articleTitle + '</span></a></li>';
             console.log('Link HTML: ' + linkHTML);
             /* create HTML of the link */
-            titleList.insertAdjacentHTML('beforeend', linkHTML);
+
             /* insert link into titleList */
             html = html + linkHTML;
         }
