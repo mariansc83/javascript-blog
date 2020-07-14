@@ -37,23 +37,21 @@
 
     }
 
-    // funkcja razem ze stala i petla przeniesiona do linii od 75 do 79
-
-
     const optArticleSelector = '.post',
         optTitleSelector = '.post-title',
-        optTitleListSelector = '.titles',
-        titleList = document.querySelector('.titles'), // Poprawione, ale nie wiem, czy dokladnie o to chodzilo
-        articles = document.querySelectorAll('.post'); // Poprawione, ale nie wiem, czy dokladnie o to chodzilo
+        optTitleListSelector = '.titles';
+
+
 
     function generateTitleLinks() {
 
         /* remove contents of titleList */
-
-        titleList.innerHTML = ''; //Poprawione
+        const titleList = document.querySelector(optTitleListSelector); // Przenioslem te stala do ciala funkcji
+        titleList.innerHTML = '';
 
         /* for each article */
         let html = '';
+        const articles = document.querySelectorAll(optArticleSelector); // Przenioslem te stala do ciala funkcji
         for (const article of articles) {
             /* get the article id */
             const articleID = article.getAttribute('id');
@@ -75,7 +73,7 @@
         const links = document.querySelectorAll('.titles a');
         console.log(links);
         for (let link of links) {
-            link.addEventListener('click', titleClickHandler); // tutaj przeniesiony addEventListener
+            link.addEventListener('click', titleClickHandler);
         }
     }
 
