@@ -1,0 +1,4 @@
+{
+  "sass.lint.enable": true,
+  "editor.wrappingIndent": "none"
+}
