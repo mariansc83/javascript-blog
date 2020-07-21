@@ -95,9 +95,15 @@ body {
 }
 
 .list-horizontal {
+
   li {
     display: inline-block;
+
   }
+}
+
+.list li {
+  display: inline-block;
 }
 
 /* Authors */
@@ -137,20 +143,25 @@ body {
 
 .tag-size-1 {
   font-size: 100%;
+  color: blue;
 }
 
 .tag-size-2 {
   font-size: 120%;
+  color: red;
 }
 
 .tag-size-3 {
   font-size: 130%;
+  color: green;
 }
 
 .tag-size-4 {
   font-size: 140%;
+  color: yellow;
 }
 
 .tag-size-5 {
   font-size: 150%;
+  color: orange
 }
