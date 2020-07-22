@@ -84,6 +84,7 @@ body {
 
 /* Lists */
 
+
 .list {
   list-style-type: none;
   margin: 0;
@@ -104,6 +105,10 @@ body {
 
 .list li {
   display: inline-block;
+}
+
+.titles li {
+  display: block;
 }
 
 /* Authors */

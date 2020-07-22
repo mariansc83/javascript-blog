@@ -88,6 +88,10 @@ body {
   display: inline-block;
 }
 
+.titles li {
+  display: block;
+}
+
 /* Authors */
 .authors li {
   margin-bottom: 12px;

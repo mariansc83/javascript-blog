@@ -289,7 +289,7 @@
       let html = '';
       const tagsAuthor = article.getAttribute('data-author');
       // console.log(tagsAuthor);
-      const linkHTML = '<li><a href="#author-' + tagsAuthor + '">' + tagsAuthor + '</a></li>';
+      const linkHTML = '<li><a href="#author-' + tagsAuthor + '">' + 'by ' + tagsAuthor + '</a></li>';
       // console.log('linkHTML do tagsAuthor: ' + linkHTML);
       html = html + linkHTML;
       // console.log(html);
