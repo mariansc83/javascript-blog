@@ -1,5 +1,10 @@
 {
   'use strict';
+  const templates = {
+    articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+    articleTag: Handlebars.compile(document.querySelector('#template-article-tag').innerHTML),
+    articleAuthor: Handlebars.compile(document.querySelector('#template-article-author').innerHTML),
+  };
   const titleClickHandler = function (event) {
     event.preventDefault();
     // console.log('Link was clicked!');
@@ -42,7 +47,7 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
     optArticleAuthorSelector = '.post-author',
-    // optTagsListSelector = '.tags.list',
+    optTagsListSelector = '.tags.list',
     optCloudClassCount = 5,
     optCloudClassPrefix = 'tag-size-';
   // optAuthorsListSelector = '.authors.list';
@@ -69,7 +74,12 @@
       const articleTitle = article.querySelector(optTitleSelector).innerHTML;
       // console.log('Tytul artykulu: ', articleTitle);
       /* get the title from the title element */
-      const linkHTML = '<li><a href="#' + articleID + '"><span>' + articleTitle + '</span></a></li>';
+      // const linkHTML = '<li><a href="#' + articleID + '"><span>' + articleTitle + '</span></a></li>'; // zmieniam linie kodu na ponizsza
+      const linkHTMLData = {
+        id: articleID,
+        title: articleTitle
+      };
+      const linkHTML = templates.articleLink(linkHTMLData);
       // console.log('Link HTML: ' + linkHTML);
       /* create HTML of the link */
       // titleList.insertAdjacentHTML('beforeend', linkHTML); // Mozna uzyc zamiast titleList.innerHTML = html;
@@ -142,7 +152,12 @@
         // console.log(tag);
 
         /* generate HTML of the link */
-        const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li> ';
+        // const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li> '; // zmieniam na linie ponizej
+        const linkHTMLData = {
+          tag: tag,
+          title: tag
+        };
+        const linkHTML = templates.articleTag(linkHTMLData);
         // console.log(linkHTML);
 
         /* add generated code to html variable */
@@ -289,7 +304,12 @@
       let html = '';
       const tagsAuthor = article.getAttribute('data-author');
       // console.log(tagsAuthor);
-      const linkHTML = '<li><a href="#author-' + tagsAuthor + '">' + 'by ' + tagsAuthor + '</a></li>';
+      // const linkHTML = '<li><a href="#author-' + tagsAuthor + '">' + 'by ' + tagsAuthor + '</a></li>'; //zmieniamy na linije nizej
+      const linkHTMLData = {
+        id: tagsAuthor,
+        title: tagsAuthor
+      };
+      const linkHTML = templates.articleAuthor(linkHTMLData);
       // console.log('linkHTML do tagsAuthor: ' + linkHTML);
       html = html + linkHTML;
       // console.log(html);
