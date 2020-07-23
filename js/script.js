@@ -49,7 +49,7 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
     optArticleAuthorSelector = '.post-author',
-    // optTagsListSelector = '.tags.list',
+    optTagsListSelector = '.tags.list',
     optCloudClassCount = 5,
     optCloudClassPrefix = 'tag-size-';
   // optAuthorsListSelector = '.authors.list';
